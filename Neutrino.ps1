@@ -18,5 +18,5 @@ $Fireexist = Get-NetFirewallRule | select Displayname
 # If the Firewall rules exist, looks for the value Ena-bled.
 If ($Fireexist -match "Z0BAZwxx") {$IOC3=1} else {$IOC3=0}
 $IOCFW = $IOC + $IOC3
-If ($IOCFW -eq 3) {Write-Host 3 indicators found!} else {Write-Host -}
+If ($IOCFW -ge 2) {Write-Host 2 indicators found! Neutrino detected} else {Write-Host -}
 Write-Host $IOCFW
